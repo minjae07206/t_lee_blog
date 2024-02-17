@@ -11,7 +11,22 @@
     <link rel="stylesheet" href="{% static 'assets/styles.css' %}">
 </head>
 <body>
-    <h1>welcome</h1>
+    <nav class="navbar bg-dark border-bottom border-body navbar-expand-lg"data-bs-theme="dark">
+        <div class="container-fluid">
+        <a class="navbar-brand" style="color: white" href="/">Home</a>
+        <a class="navbar-brand" style="color: white" href="create">New Post</a>
+        <form class="d-flex" role="search" action="/search" method="POST">
+            {% csrf_token %}
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <form class="d-flex" role="signout" action="/signout" method="POST">
+            {% csrf_token %}
+            <button class="btn btn-primary" type="submit">Logout</button>
+        </form>
+        
+        </div>
+    </nav>
 
     <!-- Add your JavaScript scripts or external script links here -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
